@@ -4,35 +4,25 @@
     <meta charset="UTF-8">
     <title>Software Engineering Assignment 1</title>
     <link rel="stylesheet" type="text/css" href="styles.css">
+    <script rel="script" type="application/javascript" src="script.js"></script>
 </head>
-<body>
+<body onload="init()">
 <div class="grid-container">
-    <input type="text" id="output" class="output">
+    <input type="text" id="output" class="output" value="0" readonly>
     <div class="operations">
-        <div class="button op" id="add"><p>+</p></div>
-        <div class="button op" id="sub"><p>-</p></div>
-        <div class="button op" id="mul"><p>X</p></div>
-        <div class="button op" id="div"><p>/</p></div>
-        <div class="button op" id="equ"><p>=</p></div>
+        <div class="button op" id="add" onclick="typeOp('+')"><p>+</p></div>
+        <div class="button op" id="sub" onclick="typeOp(String.fromCharCode(8722))"><p>-</p></div>
+        <div class="button op" id="mul" onclick="typeOp('*')"><p>X</p></div>
+        <div class="button op" id="div" onclick="typeOp('/')"><p>/</p></div>
+        <div class="button op" id="equ" onclick="evalInput()"><p>=</p></div>
     </div>
     <div class="top-op">
-        <div class="button op" id="clr"><p>AC</p></div>
-        <div class="button op" id="del"><img src="https://pngimage.net/wp-content/uploads/2018/05/delete-symbol-png-8.png"></div>
-        <div class="button op" id="mod"><p>%</p></div>
+        <div class="button op" id="clr" onclick="clearInput()"><p>AC</p></div>
+            <div class="button op" id="del" onclick="back()"><img src="https://pngimage.net/wp-content/uploads/2018/05/delete-symbol-png-8.png"></div>
+        <div class="button op" id="mod" onclick="typeOp('%')"><p>%</p></div>
     </div>
-    <div class="numbers">
-        <div class="button num" id="num1"><p>1</p></div>
-        <div class="button num" id="num2"><p>2</p></div>
-        <div class="button num" id="num3"><p>3</p></div>
-        <div class="button num" id="num4"><p>4</p></div>
-        <div class="button num" id="num5"><p>5</p></div>
-        <div class="button num" id="num6"><p>6</p></div>
-        <div class="button num" id="num7"><p>7</p></div>
-        <div class="button num" id="num8"><p>8</p></div>
-        <div class="button num" id="num9"><p>9</p></div>
-        <div class="button num" id="per"><p>.</p></div>
-        <div class="button num" id="num0"><p>0</p></div>
-        <div class="button op" id="neg"><p>+/-</p></div>
+    <div class="numbers" id="number-container">
+
     </div>
 </div>
 
